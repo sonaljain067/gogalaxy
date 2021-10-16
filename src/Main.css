@@ -1,0 +1,41 @@
+*{
+  overflow-x: hidden;
+}
+/* Nav */
+.Nav-bar {
+  background-color: #282c34;
+  min-height: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+}
+
+/* Table */
+.table-row{
+  cursor: pointer;
+  background-color: rgba(208,224,227, 0.2);
+}
+Table, .carousel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Header {
+  background-color: rgb(208,224,227);
+}
+.css-46bh2p-MuiCardContent-root .basic-card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+
