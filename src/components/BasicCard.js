@@ -1,12 +1,9 @@
 import * as React from 'react';
 import '../Main.css'
-import Box from '@mui/material/Box';
 import { makeStyles} from '@material-ui/styles';
 import {Grid} from '@material-ui/core';
 import Card from '@mui/material/Card';
-// import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
@@ -67,7 +64,7 @@ export default function BasicCard({details}) {
             Failing: {failures.time ? failures.time : 0} times {failures.reason &&  <Typography variant="h6"> because of {failures.reason}.  </Typography>}
             </Typography> 
             <Typography variant="h6">
-            Success: {details.success}.
+            Success: {details.success ? 'True' : 'False'}
             </Typography>
              <Typography variant="body">
               Net: {details.net ? 'True' : 'False'}, &nbsp;  &nbsp;Presskit: {details.presskit ? 'True' : 'False'},  &nbsp;  &nbsp; Success: {details.success ? 'True' : 'False'},  &nbsp;  &nbsp; Upcoming: {details.upcoming ? 'True' : 'False'},  &nbsp;  &nbsp; Auto-update: {details.auto_update ? 'True' : 'False'},  &nbsp;  &nbsp; TBD: {details.tbd ? 'True' : 'False'}  &nbsp;  &nbsp; 

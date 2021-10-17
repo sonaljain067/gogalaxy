@@ -16,7 +16,7 @@ function GetDetailsPage(id){
   <Routes id={id} />
 }
 
-const LaunchesC = () => {
+const Launches = () => {
   //we change here
   const history = useHistory();
   const [id, setId] = useState(0);
@@ -63,10 +63,10 @@ const LaunchesC = () => {
     <>
         <Paper>
         <TableContainer component={Paper} elevation={3}>
-        <Table sx={{ minWidth: 650 }}>
+        <Table sx={{ minWidth: 360 }}>
             <TableHead>
             <TableRow className="Header">
-                <TableCell align="center">ID</TableCell>
+               <TableCell align="center">ID</TableCell>
                 <TableCell align="center">Name</TableCell>
                 <TableCell align="center">Details</TableCell>
                 <TableCell align="center">Launchpad</TableCell>
@@ -80,15 +80,13 @@ const LaunchesC = () => {
                     //referencing the last item to be watched by the observer
                     <div ref={lastElementRef} key={row.id}>
                     <TableRow key={row.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }} className="table-row"
-                
                     onClick={() => {setId(row.id); history.push(`/${row.id}`);}}
                     >
-                    <TableCell component="th" scope="row">{row.id}</TableCell>
+                    <TableCell align="center">{row.id}</TableCell>
                     <TableCell align="center">{row.name}</TableCell>
                     <TableCell align="center">{row.details}</TableCell>
                     <TableCell align="center">{row.launchpad}</TableCell>
                     <TableCell align="center">{row.window}</TableCell>
-                    
                     </TableRow>
                     </div>
                 );
@@ -96,7 +94,7 @@ const LaunchesC = () => {
                 return (<TableRow key={row.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }} className="table-row"
                     onClick={() => {setId(row.id); history.push(`/${row.id}`);}}
                     >
-                    <TableCell component="th" scope="row">{row.id}</TableCell>
+                    <TableCell align="center">{row.id}</TableCell>
                     <TableCell align="center">{row.name}</TableCell>
                     <TableCell align="center">{row.details}</TableCell>
                     <TableCell align="center">{row.launchpad}</TableCell>
@@ -113,4 +111,4 @@ const LaunchesC = () => {
   );
 };
 
-export default LaunchesC;
+export default Launches;
