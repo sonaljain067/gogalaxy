@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -33,11 +33,6 @@ const Launches = () => {
     isFetching
   );
 
-  //on initial mount
-  useEffect(() => {
-    loadMoreLaunches();
-  }, []);
-
   function loadMoreLaunches() {
     setIsFetching(true);
 
@@ -57,6 +52,11 @@ const Launches = () => {
         console.log(e);
       });
   }
+  //on initial mount
+  useEffect(() => {
+    loadMoreLaunches();
+  }, []);
+
    
 
   return (
@@ -79,15 +79,17 @@ const Launches = () => {
                 return (
                     //referencing the last item to be watched by the observer
                     <div ref={lastElementRef} key={row.id}>
-                    <TableRow key={row.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }} className="table-row"
-                    onClick={() => {setId(row.id); history.push(`/${row.id}`);}}
-                    >
-                    <TableCell align="center">{row.id}</TableCell>
-                    <TableCell align="center">{row.name}</TableCell>
-                    <TableCell align="center">{row.details}</TableCell>
-                    <TableCell align="center">{row.launchpad}</TableCell>
-                    <TableCell align="center">{row.window}</TableCell>
-                    </TableRow>
+                      <>
+                      <TableRow key={row.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }} className="table-row"
+                      onClick={() => {setId(row.id); history.push(`/${row.id}`);}}
+                      >
+                      <TableCell align="center">{row.id}</TableCell>
+                      <TableCell align="center">{row.name}</TableCell>
+                      <TableCell align="center">{row.details}</TableCell>
+                      <TableCell align="center">{row.launchpad}</TableCell>
+                      <TableCell align="center">{row.window}</TableCell>
+                      </TableRow>
+                      </>
                     </div>
                 );
                 } else {
