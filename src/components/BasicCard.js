@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import { makeStyles} from '@material-ui/styles';
 import {Grid} from '@material-ui/core';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
+// import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -21,9 +21,8 @@ const useStyles = makeStyles({
 })
 export default function BasicCard({details}) {
   const classes = useStyles();
-  const {failings, links, ships, payloads, cores, failures} = details;
+  const {failures} = details;
   return (
-    
       <div className={classes.basicCard}>
         <Grid container className={classes.container}>
           <Grid item md={2} lg={3} className={classes.item}></Grid>
@@ -45,15 +44,6 @@ export default function BasicCard({details}) {
             </Typography>
             <Typography variant="h6">
             Launchpad: {details.launchpad}
-            </Typography>
-            <Typography variant="h6">
-            Article: {details.article}
-            </Typography>
-            <Typography variant="h6">
-            Wikipedia: {details.wikipedia}
-            </Typography>
-            <Typography variant="h6">
-            Youtube: {details.youtube_id}
             </Typography>
 
             <Typography variant="h5">
@@ -79,9 +69,6 @@ export default function BasicCard({details}) {
             <Typography variant="h6">
             Success: {details.success}.
             </Typography>
-            {/* <Typography variant="h6">
-              Ships: {details.fairings.ships ? details.fairings.ships.map((ship) => return ship) : 'No ships'}
-             </Typography> */}
              <Typography variant="body">
               Net: {details.net ? 'True' : 'False'}, &nbsp;  &nbsp;Presskit: {details.presskit ? 'True' : 'False'},  &nbsp;  &nbsp; Success: {details.success ? 'True' : 'False'},  &nbsp;  &nbsp; Upcoming: {details.upcoming ? 'True' : 'False'},  &nbsp;  &nbsp; Auto-update: {details.auto_update ? 'True' : 'False'},  &nbsp;  &nbsp; TBD: {details.tbd ? 'True' : 'False'}  &nbsp;  &nbsp; 
             </Typography>
@@ -89,9 +76,9 @@ export default function BasicCard({details}) {
               Fairings reused: {details.fairings.reused ? 'True' : 'False'},  &nbsp;  &nbsp; Fairings Recovery Update: {details.fairings.recovery_update ? 'True' : 'False'},  &nbsp;  &nbsp; Fairing Recovered: {details.recovered ? 'True' : 'False'}
             </Typography>
         </CardContent>
-        <CardActions>
+        {/* <CardActions>
             <Button size="small">Learn More</Button>
-        </CardActions>
+        </CardActions> */}
         </Card>
           </Grid>
           <Grid item md={2} lg={3} className={classes.item}></Grid>

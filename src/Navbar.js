@@ -7,9 +7,6 @@ export default function Navbar() {
             <div className="Nav-bar">
                <h1 className="nav-h1">GoGalaxy 🚀</h1>
             </div>
-            <nav>
-
-            </nav>
         </div>
     )
 }

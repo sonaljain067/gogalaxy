@@ -1,5 +1,4 @@
 import React from 'react';
-import BasicCard from './components/BasicCard'
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MobileStepper from '@mui/material/MobileStepper';
@@ -24,7 +23,7 @@ const useStyles = makeStyles({
   }
 })
 
-function DetailsCard({details}) {
+function Carousel({details}) {
   const {patch, flickr} = details.links;
   const moreIndex = flickr.original.length;
   const classes = useStyles();
@@ -58,7 +57,7 @@ function DetailsCard({details}) {
         <div className={classes.carousel}>
             <Grid container className={classes.container}>
             <Grid item md={1} lg={2} className={classes.item}></Grid>
-            <Grid item sx={12} md={10} lg={8} className={classes.item}></Grid>
+            <Grid item sx={12} md={10} lg={8} className={classes.item}>
             <Box sx={{flexGrow: 1 , minWidth: 360}}>
             <Paper
             square
@@ -84,11 +83,14 @@ function DetailsCard({details}) {
                     <Box
                     component="img"
                     sx={{
-                        height: 255,
+                        // height: 255,
+                        minWidth: 360,
                         display: 'block',
-                        maxWidth: 400,
+                        textAlign: 'center',
+                        maxWidth: 600,
                         overflow: 'hidden',
                         width: '100%',
+                        margin: 'auto'
                     }}
                     src={step.imgPath}
                     />
@@ -147,6 +149,7 @@ function DetailsCard({details}) {
             }
         />
             </Box>
+            </Grid>
         <Grid item md={1} lg={2} className={classes.item}></Grid>
         </Grid>
         </div>
@@ -156,4 +159,4 @@ function DetailsCard({details}) {
 
 }
 
-export default DetailsCard;
+export default Carousel;
